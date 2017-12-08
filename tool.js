@@ -131,4 +131,23 @@ function insertSort(arr){
     }
     return arr;
 }
-console.log(insertSort([2,3,1,45,2,12,34232,1,21,23]))
+// console.log(insertSort([2,3,1,45,2,12,34232,1,21,23]))
+
+//将url后的参数键值对转换成JSON数组格式效率最高的方法
+var url = 'http: //www.a.com/index.php?route=main&nav&user=tom&id=123&profile';
+var querys = url
+    .substring(url.indexOf('?') + 1)
+    .split('&')
+    .map((query) => query.split('='))
+    .reduce((params, pairs) => (params[pairs[0]] = pairs[1] || '', params), {});
+
+console.log(querys);
+
+//斐波那契数列
+function fib(n){
+    if(n==1 || n==2){
+        return 1;
+    }
+    return fib(n-1)+fib(n-2);
+}
+console.log(fib(10));
